@@ -5,11 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, Outlet} from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import {LinkContainer} from "react-router-bootstrap";
+import FrontPage from "./components/FrontPage";
 
 function LogIn({login}) {
     const init = {username: "", password: ""};
     const [loginCredentials, setLoginCredentials] = useState(init);
-
     const performLogin = (evt) => {
         evt.preventDefault();
         login(loginCredentials.username, loginCredentials.password);
@@ -46,6 +47,7 @@ function LogIn({login}) {
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false)
+    const [showLogin,setShowLogin] = useState(false)
 
     const logout = () => {
         facade.logout()
@@ -58,7 +60,26 @@ function App() {
 
     return (
         <div>
-            {!loggedIn ? (<LogIn login={login} />) :
+            {!showLogin &&
+                <div>
+                    <Navbar bg="light" expand="lg" className={"m-auto w-50"}>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto m-auto">
+                                <LinkContainer to="/">
+                                    <Nav.Link>Home</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/about">
+                                    <Nav.Link>About</Nav.Link>
+                                </LinkContainer>
+                                <Button className="float-end" onClick={()=>setShowLogin(true)} >Log in</Button>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Navbar>
+                <FrontPage/>
+                </div>
+            }
+            {!loggedIn ? (showLogin && <LogIn login={login}/>) :
                 (<div>
                     <Header logout={logout}/>
                 </div>)}
