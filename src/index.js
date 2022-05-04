@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 import App from "./App";
-import Jokes from "./components/Jokes";
+import Requests from "./components/Requests";
 import Header from "./components/Header";
 import Home from "./components/Home";
 
@@ -12,7 +12,7 @@ render(
         <Routes>
             <Route exact="true" path="/" element={<App/>}>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/jokes" element={<Jokes/>}/>
+                <Route path="/requests" element={<Requests/>}/>
             </Route>
             <Route
                 path="*"

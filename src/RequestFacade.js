@@ -13,14 +13,27 @@ function RequestFacade() {
         fetch(URL + "/api/request/", options).then(r => r.json());
     }
 
+    const getRequestByCoachID = (coachID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/request/coach/"+coachID, options).then(r => r.json());
+    }
 
-    const makeOptions = (method, body) => {
+    const getRequestByRequestID = (requestID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/request/"+requestID, options).then(r => r.json());
+    }
+
+
+    const makeOptions = (method, body,addToken) => {
         var opts = {
             method: method,
             headers: {
                 "Content-type": "application/json",
                 'Accept': 'application/json',
             }
+        }
+        if (addToken) {
+            opts.headers["x-access-token"] = localStorage.getItem("jwtToken");
         }
         if (body) {
             opts.body = JSON.stringify(body);
@@ -29,7 +42,9 @@ function RequestFacade() {
     }
     return {
         getCoaches,
-        createRequest
+        createRequest,
+        getRequestByCoachID,
+        getRequestByRequestID,
     }
 }
 

@@ -9,13 +9,12 @@ const Home = () => {
         const [dataFromServer, setDataFromServer] = useState("Loading...")
 
         useEffect(() => {
-            facade.fetchData().then(data => setDataFromServer(data.msg));
         }, [])
 
         return (
             <div>
-                <h2>Data Received from server</h2>
-                <h3>{dataFromServer}</h3>
+                <h2>Fit Helper</h2>
+                <h3></h3>
             </div>
         )
 
