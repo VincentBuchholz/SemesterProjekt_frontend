@@ -5,12 +5,11 @@ import UserFacade from "../UserFacade";
 const CreateUser = () => {
     const initialState = {userName: "", firstName: "", lastName: "", phone: "", email: "", password: "",coachID: localStorage.getItem("userID")};
     const [user, setUser] = useState(initialState);
-    const [errorMsg, setErrorMsg] = useState(null);
-    const [error, setError] = useState(false);
+    const [errorMsg, setErrorMsg] = useState("Username is taken!");
     const errorAlertMsg = useRef(null);
     const successAlertMsg = useRef(null);
-    const [test,setTest] =useState(false);
     var isError = false;
+
 
     const handleInput = (event) => {
         const target = event.target
@@ -21,11 +20,12 @@ const CreateUser = () => {
 
     const createUser = (user) =>{
         UserFacade.createUser(user).then(err => {
-            setErrorMsg(error.message)
-            if(!err.ok){
+            if(err.message){
                 isError = true;
-                console.log("hello")
-                console.log(isError)
+                setErrorMsg(err.message);
+                handleErrorAndSuccess()
+            }else{
+                handleErrorAndSuccess()
             }
         })
     }
@@ -33,13 +33,10 @@ const CreateUser = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         createUser(user)
-        handleErrorAndSuccess()
     }
 
     const handleErrorAndSuccess = () =>{
-        console.log("test" + isError)
         if (isError){
-            console.log("hello im here")
             errorAlertMsg.current.style.display = 'block';
             setTimeout(function() {errorAlertMsg.current.style.display = 'none'},3000)
             isError = false;
@@ -48,8 +45,7 @@ const CreateUser = () => {
             successAlertMsg.current.style.display = 'block';
             setTimeout(function() {successAlertMsg.current.style.display = 'none'},3000)
         }
-        setErrorMsg(null)
-
+        setErrorMsg(null);
     }
 
 
@@ -57,7 +53,7 @@ const CreateUser = () => {
         <Container>
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <div ref={errorAlertMsg} className="alert alert-danger" style={{display:"none"}}>
-                    <strong>{errorMsg}</strong>
+                    <strong>Username is taken!</strong>
                 </div>
                 <div ref={successAlertMsg} className="alert alert-success" style={{display:"none"}}>
                     <strong>User has been created</strong>
