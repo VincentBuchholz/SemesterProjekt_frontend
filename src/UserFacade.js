@@ -2,9 +2,9 @@ const URL = "http://localhost:8080/ca2_war_exploded";
 
 function UserFacade() {
 
-    const createUser = (user) => {
+    const createUser = async (user) => {
         const options = makeOptions("POST", user,true); //True add's the token
-        return fetch(URL + "/api/user/", options).then(r => r.json());
+        return await fetch(URL + "/api/user/", options).then(r => r.json());
     }
 
 

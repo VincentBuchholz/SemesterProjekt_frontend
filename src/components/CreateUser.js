@@ -9,6 +9,8 @@ const CreateUser = () => {
     const [error, setError] = useState(false);
     const errorAlertMsg = useRef(null);
     const successAlertMsg = useRef(null);
+    const [test,setTest] =useState(false);
+    var isError = false;
 
     const handleInput = (event) => {
         const target = event.target
@@ -18,26 +20,29 @@ const CreateUser = () => {
     }
 
     const createUser = (user) =>{
-        UserFacade.createUser(user).then(error => {
+        UserFacade.createUser(user).then(err => {
             setErrorMsg(error.message)
-            if(error.message){
-                setError(true)
+            if(!err.ok){
+                isError = true;
+                console.log("hello")
+                console.log(isError)
             }
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        await createUser(user)
+        createUser(user)
         handleErrorAndSuccess()
-        console.log(error)
     }
 
     const handleErrorAndSuccess = () =>{
-
-        if (error){
+        console.log("test" + isError)
+        if (isError){
+            console.log("hello im here")
             errorAlertMsg.current.style.display = 'block';
             setTimeout(function() {errorAlertMsg.current.style.display = 'none'},3000)
+            isError = false;
         }else {
             setUser(initialState);
             successAlertMsg.current.style.display = 'block';
