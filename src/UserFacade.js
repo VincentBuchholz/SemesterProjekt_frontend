@@ -4,7 +4,7 @@ function UserFacade() {
 
     const createUser = (user) => {
         const options = makeOptions("POST", user,true); //True add's the token
-        fetch(URL + "/api/user/", options).then(r => r.json());
+        return fetch(URL + "/api/user/", options).then(r => r.json());
     }
 
 

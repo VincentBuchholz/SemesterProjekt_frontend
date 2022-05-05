@@ -14,6 +14,7 @@ const FrontPage = () => {
         setRequest({...request, [id]: value})
     }
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         RequestFacade.createRequest(request)
@@ -32,7 +33,6 @@ const FrontPage = () => {
             })
 
     }, [setCoaches]);
-    console.log(coaches)
 
 
     return (
@@ -45,30 +45,30 @@ const FrontPage = () => {
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="firstName">
                     <Form.Label>Fornavn</Form.Label>
-                    <Form.Control type="text" value={request.firstName}  placeholder="skriv dit fornavn" />
+                    <Form.Control type="text" required value={request.firstName}  placeholder="skriv dit fornavn" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="lastName">
                     <Form.Label>Efternavn</Form.Label>
-                    <Form.Control type="text" value={request.lastName}  placeholder="skriv dit efternavn" />
+                    <Form.Control type="text" required  value={request.lastName}  placeholder="skriv dit efternavn" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" value={request.email}  placeholder="Skriv din email" />
+                    <Form.Control type="email" required  value={request.email}  placeholder="Skriv din email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="phone">
                     <Form.Label>Nummer</Form.Label>
-                    <Form.Control type="text" value={request.phone}  placeholder="skriv dit nummer" />
+                    <Form.Control type="text" required  value={request.phone}  placeholder="skriv dit nummer" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="desc">
                     <Form.Label>Kommentar</Form.Label>
-                    <Form.Control as="textarea"  value={request.desc}  placeholder="" />
+                    <Form.Control as="textarea" required value={request.desc}  placeholder="" />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor="coachID">Vælg træner</Form.Label>
                     <Form.Select id="coachID">
-                        <option selected>Vælg træner</option>
+                        <option value={""} selected disabled hidden>Vælg træner</option>
 
                         {coaches && coaches.map((coach) => {
                             return <option key={coach.id} value={coach.id}>{coach.firstName} {coach.lastName}</option>
@@ -82,6 +82,7 @@ const FrontPage = () => {
                     Send
                 </Button>
             </Form>
+            {JSON.stringify(request)}
 
         </Container>
     );
