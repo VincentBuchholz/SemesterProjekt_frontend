@@ -5,6 +5,8 @@ import Requests from "./components/Requests";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import CreateUser from "./components/CreateUser";
+import Customers from "./components/Customers";
+import Customer from "./components/Customer";
 
 
 const rootElement = document.getElementById("root");
@@ -15,6 +17,8 @@ render(
                 <Route path="/" element={<Home/>}/>
                 <Route path="/requests" element={<Requests/>}/>
                 <Route path="/createUser" element={<CreateUser/>}/>
+                <Route path="/customers" element={<Customers/>}/>
+                <Route path="customers/:customerID" element={<Customer />}/>
             </Route>
             <Route
                 path="*"

@@ -32,7 +32,13 @@ const Header = ({logout}) => {
                             {
                                 isCoach &&
                                 <LinkContainer to="/createUser">
-                                <Nav.Link>Create user</Nav.Link>
+                                <Nav.Link>Opret bruger</Nav.Link>
+                                </LinkContainer>
+                            }
+                            {
+                                isCoach &&
+                                <LinkContainer to="/customers">
+                                    <Nav.Link>Kunder</Nav.Link>
                                 </LinkContainer>
                             }
                             <Button className="float-end" onClick={logout}>Log out</Button>
