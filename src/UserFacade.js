@@ -22,6 +22,11 @@ function UserFacade() {
         return  fetch(URL + "/api/user/nutrition/"+customerID, options).then(r => r.json());
     }
 
+    const getMacroChartCustomerID =  (customerID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/user/macrochart/"+customerID, options).then(r => r.json());
+    }
+
     const updateNutrition = (nutrition) => {
         const options = makeOptions("PUT", nutrition,true); //True add's the token
         return fetch(URL + "/api/user/updatenutrition/", options).then(r => r.json());
@@ -50,6 +55,7 @@ function UserFacade() {
         getCustomerByCustomerID,
         updateNutrition,
         getNutritionByCustomerID,
+        getMacroChartCustomerID
     }
 }
 

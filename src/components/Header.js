@@ -9,8 +9,7 @@ const Header = ({logout}) => {
     if(userType === "coach"){
         isCoach = true;
     }
-    console.log(userType)
-    console.log(isCoach)
+
 
     return (
         <div>
@@ -18,9 +17,12 @@ const Header = ({logout}) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto m-auto">
-                            <LinkContainer to="/">
-                                <Nav.Link>Home</Nav.Link>
-                            </LinkContainer>
+                            {
+                                isCoach &&
+                                <LinkContainer to="/">
+                                    <Nav.Link>Home</Nav.Link>
+                                </LinkContainer>
+                            }
                             {
                                 isCoach &&
 
@@ -40,6 +42,32 @@ const Header = ({logout}) => {
                                 <LinkContainer to="/customers">
                                     <Nav.Link>Kunder</Nav.Link>
                                 </LinkContainer>
+                            }
+
+
+                            {
+                                !isCoach &&
+
+                                <LinkContainer to="/">
+                                    <Nav.Link>Overview</Nav.Link>
+                                </LinkContainer>
+
+                            }
+                            {
+                                !isCoach &&
+
+                                <LinkContainer to="/workoutplan">
+                                    <Nav.Link>Workout plan</Nav.Link>
+                                </LinkContainer>
+
+                            }
+                            {
+                                !isCoach &&
+
+                                <LinkContainer to="/mealplan">
+                                    <Nav.Link>Meal plan</Nav.Link>
+                                </LinkContainer>
+
                             }
                             <Button className="float-end" onClick={logout}>Log out</Button>
                         </Nav>

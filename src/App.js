@@ -2,9 +2,7 @@ import React, {useState, useEffect} from "react"
 import facade from "./apiFacade";
 import {Button, Container, Form, Nav, Navbar} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link, Outlet} from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home";
 import {LinkContainer} from "react-router-bootstrap";
 import FrontPage from "./components/FrontPage";
 

@@ -58,12 +58,25 @@ function apiFacade() {
     const getToken = () => {
         return localStorage.getItem('jwtToken')
     }
+    const getUserType = () => {
+        return localStorage.getItem('userType')
+    }
+
+    const getUserID = () => {
+        return localStorage.getItem('userID')
+    }
+
     const loggedIn = () => {
         const loggedIn = getToken() != null;
         return loggedIn;
     }
     const logout = () => {
         localStorage.removeItem("jwtToken");
+        localStorage.removeItem("userType");
+        localStorage.removeItem("userID");
+        console.log(localStorage.getItem('jwtToken'))
+        console.log(localStorage.getItem('userType'))
+        console.log(localStorage.getItem('userID'))
     }
 
     return {
@@ -73,7 +86,12 @@ function apiFacade() {
         loggedIn,
         login,
         logout,
-        fetchData
+        fetchData,
+        setUserType,
+        setUserID,
+        getUserType,
+        getUserID
+
     }
 }
 const facade = apiFacade();

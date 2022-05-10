@@ -14,7 +14,7 @@ const Home = () => {
         return (
             <div>
                 <h2>Fit Helper</h2>
-                <h3></h3>
+                <h5>Hello "User name"</h5>
             </div>
         )
 

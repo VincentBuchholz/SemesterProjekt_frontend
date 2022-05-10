@@ -82,7 +82,7 @@ const FrontPage = () => {
                     Send
                 </Button>
             </Form>
-            {JSON.stringify(request)}
+
 
         </Container>
     );
