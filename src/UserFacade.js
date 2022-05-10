@@ -31,6 +31,11 @@ function UserFacade() {
         const options = makeOptions("PUT", nutrition,true); //True add's the token
         return fetch(URL + "/api/user/updatenutrition/", options).then(r => r.json());
     }
+    const updateWeight = (customerID,weight) => {
+        const options = makeOptions("POST",false,true); //True add's the token
+        return fetch(URL + "/api/user/updateweight/"+customerID+"/"+weight, options).then(r => r.json());
+    }
+
 
 
     const makeOptions = (method, body,addToken) => {
@@ -55,7 +60,8 @@ function UserFacade() {
         getCustomerByCustomerID,
         updateNutrition,
         getNutritionByCustomerID,
-        getMacroChartCustomerID
+        getMacroChartCustomerID,
+        updateWeight,
     }
 }
 

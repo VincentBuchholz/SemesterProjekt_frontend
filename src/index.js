@@ -13,24 +13,12 @@ import apiFacade from "./apiFacade";
 const rootElement = document.getElementById("root");
 const loggedIn = apiFacade.loggedIn()
 
-const getUserType = () => {
-    const userType  = apiFacade.getUserType();
-    if(userType === "coach"){
-        console.log("coach")
-        return <Route path="/" element={<Home/>}/>
-    }else{
-        console.log("customer")
-        return <Route path="/" element={<HomeCustomer/>}/>
-    }
-}
 render(
 
     <BrowserRouter>
         <Routes>
             <Route exact="true" path="/" element={<App/>}>
-                {loggedIn
-                &&getUserType()
-                }
+                <Route path="/" element={<Home/>}/>
                 <Route path="/requests" element={<Requests/>}/>
                 <Route path="/createUser" element={<CreateUser/>}/>
                 <Route path="/customers" element={<Customers/>}/>

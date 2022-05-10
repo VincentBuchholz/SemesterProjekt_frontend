@@ -9,7 +9,6 @@ import RequestFacade from "../RequestFacade";
 const Home = () => {
 
     function LoggedIn() {
-        const [dataFromServer, setDataFromServer] = useState("Loading...")
         const initialState = {id: "", calories:"", protein: "", fat: "", carbs: ""};
         const initialStateMacro = {url: ""};
         const [nutrition, setNutrition] = useState(initialState);
@@ -30,12 +29,14 @@ const Home = () => {
         const handleInput = (event) => {
             const target = event.target
             const value = target.value
-            setWeight({value})
+            setWeight(value)
         }
 
 
         const handleSubmit = (e) => {
             e.preventDefault();
+            userFacade.updateWeight(localStorage.getItem("userID"),weight);
+
         }
 
         return (
