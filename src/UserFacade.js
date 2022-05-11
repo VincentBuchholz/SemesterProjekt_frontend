@@ -22,10 +22,21 @@ function UserFacade() {
         return  fetch(URL + "/api/user/nutrition/"+customerID, options).then(r => r.json());
     }
 
-    const getMacroChartCustomerID =  (customerID) => {
+    const getMacroChartByCustomerID =  (customerID) => {
         const options = makeOptions("GET",false,true); //True add's the token
         return  fetch(URL + "/api/user/macrochart/"+customerID, options).then(r => r.json());
     }
+
+    const getWeightChartByCustomerID =  (customerID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/user/weightchart/"+customerID, options).then(r => r.json());
+    }
+
+    const getLatestWeightByCustomerID =  (customerID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/user/latestweight/"+customerID, options).then(r => r.json());
+    }
+
 
     const updateNutrition = (nutrition) => {
         const options = makeOptions("PUT", nutrition,true); //True add's the token
@@ -60,7 +71,9 @@ function UserFacade() {
         getCustomerByCustomerID,
         updateNutrition,
         getNutritionByCustomerID,
-        getMacroChartCustomerID,
+        getMacroChartByCustomerID,
+        getWeightChartByCustomerID,
+        getLatestWeightByCustomerID,
         updateWeight,
     }
 }

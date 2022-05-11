@@ -10,17 +10,20 @@ const Home = () => {
 
     function LoggedIn() {
         const initialState = {id: "", calories:"", protein: "", fat: "", carbs: ""};
-        const initialStateMacro = {url: ""};
+        const initialStateURL = {url: ""};
         const [nutrition, setNutrition] = useState(initialState);
-        const [macroChart, setMacroChart] = useState(initialStateMacro);
+        const [macroChart, setMacroChart] = useState(initialStateURL);
+        const [weightChart, setWeightChart] = useState(initialStateURL);
         const [weight,setWeight]=useState();
+        const [currentWeight,setCurrentWeight] = useState();
 
 
 
         useEffect( ()  => {
             userFacade.getNutritionByCustomerID(apiFacade.getUserID()).then(nutrition => setNutrition(nutrition))
-            userFacade.getMacroChartCustomerID(apiFacade.getUserID()).then(macroChart => setMacroChart(macroChart))
-            console.log(macroChart)
+            userFacade.getMacroChartByCustomerID(apiFacade.getUserID()).then(macroChart => setMacroChart(macroChart))
+            userFacade.getWeightChartByCustomerID(apiFacade.getUserID()).then(weightChart => setWeightChart(weightChart))
+            userFacade.getLatestWeightByCustomerID(apiFacade.getUserID()).then(currentWeight => setCurrentWeight(currentWeight.weight))
         }, [])
 
         useEffect(() => {
@@ -33,10 +36,11 @@ const Home = () => {
         }
 
 
-        const handleSubmit = (e) => {
+        const handleSubmit = async (e) => {
             e.preventDefault();
-            userFacade.updateWeight(localStorage.getItem("userID"),weight);
-
+            await userFacade.updateWeight(localStorage.getItem("userID"),weight);
+            setCurrentWeight(weight)
+            setWeightChart(userFacade.getWeightChartByCustomerID(apiFacade.getUserID()).then(weightChart => setWeightChart(weightChart)))
         }
 
         return (
@@ -54,13 +58,21 @@ const Home = () => {
                         <img src={macroChart.url} alt="macrochart" style={{width:"80%"}}/>
                     </Col>
                     <Col>
-                        <div className={"mb-5"}>
-                        <h2>Weight</h2>
-                        <img src="https://i.dietdoctor.com/wp-content/uploads/2020/11/dawn_effect_1.png?auto=compress%2Cformat&w=800&h=358&fit=crop" alt="weightgraph" style={{width:"100%"}}/>
-                        </div>
+                            <div className={"mb-5"}>
+                                <h2>Weight</h2>
+                                {currentWeight &&
+                                <img src={weightChart.url} alt="weightgraph" style={{width: "100%"}}/>
+                                }
+                            </div>
+
 
 
                         <div>
+                            {currentWeight &&
+                            <div className={"mb-5"}>
+                                <h5>Current weight: {currentWeight} kg</h5>
+                            </div>
+                            }
                         <h4>Weigh in</h4>
                         <Form onChange={handleInput} onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="phone">

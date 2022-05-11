@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 
 import userFacade from "../UserFacade";
+import apiFacade from "../apiFacade";
 
 
 
@@ -14,10 +15,14 @@ const Customer = () => {
     const initialState = {id: "", calories:"", protein: "", fat: "", carbs: ""};
     const [nutrition, setNutrition] = useState(initialState);
     const [customer,setCustomer] = useState();
+    const [weightChart, setWeightChart] = useState();
+    const [currentWeight,setCurrentWeight] = useState();
 
     useEffect( ()  => {
         userFacade.getCustomerByCustomerID(parms.customerID).then(customer => setCustomer(customer));
         userFacade.getNutritionByCustomerID(parms.customerID).then(nutrition => setNutrition(nutrition))
+        userFacade.getWeightChartByCustomerID(parms.customerID).then(weightChart => setWeightChart(weightChart.url))
+        userFacade.getLatestWeightByCustomerID(parms.customerID).then(currentWeight => setCurrentWeight(currentWeight.weight))
     }, [])
 
 
@@ -104,7 +109,14 @@ const Customer = () => {
 
                 <Col>
                     <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
-                    <img src="https://www.thewellnessendeavor.com/wp-content/uploads/2018/07/Day-100-Wt-Loss-Graph.png" alt="weight chart"/>
+                        {currentWeight &&
+                        <div>
+                            <div>
+                                <h3 className={"text-center"}>Current weight: {currentWeight} kg</h3>
+                            </div>
+                        <img src={weightChart} alt="weightgraph" style={{width:"100%"}}/>
+                        </div>
+                        }
                     </div>
                 </Col>
 
