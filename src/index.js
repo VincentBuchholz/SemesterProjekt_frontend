@@ -8,6 +8,7 @@ import Customers from "./components/Customers";
 import Customer from "./components/Customer";
 import HomeCustomer from "./components/HomeCustomer";
 import apiFacade from "./apiFacade";
+import MealPlan from "./components/MealPlan";
 
 
 const rootElement = document.getElementById("root");
@@ -22,8 +23,8 @@ render(
                 <Route path="/requests" element={<Requests/>}/>
                 <Route path="/createUser" element={<CreateUser/>}/>
                 <Route path="/customers" element={<Customers/>}/>
+                <Route path="/mealplan" element={<MealPlan/>}/>
                 <Route path="customers/:customerID" element={<Customer />}/>
-
 
             </Route>
             <Route
