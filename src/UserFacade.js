@@ -47,6 +47,17 @@ function UserFacade() {
         return fetch(URL + "/api/user/updateweight/"+customerID+"/"+weight, options).then(r => r.json());
     }
 
+    const setMealPlan = (mealPlan) => {
+        const options = makeOptions("POST",mealPlan,true); //True add's the token
+        return fetch(URL + "/api/user/mealplan", options).then(r => r.json());
+    }
+    const setWorkoutPlan = (workoutPlan) => {
+        const options = makeOptions("POST",workoutPlan,true); //True add's the token
+        return fetch(URL + "/api/user/workoutplan", options).then(r => r.json());
+    }
+
+
+
 
 
     const makeOptions = (method, body,addToken) => {
@@ -75,6 +86,8 @@ function UserFacade() {
         getWeightChartByCustomerID,
         getLatestWeightByCustomerID,
         updateWeight,
+        setMealPlan,
+        setWorkoutPlan,
     }
 }
 

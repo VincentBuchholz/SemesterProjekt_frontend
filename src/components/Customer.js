@@ -10,6 +10,8 @@ import apiFacade from "../apiFacade";
 const Customer = () => {
     const parms = useParams();
     const successAlertMsg = useRef(null);
+    const successAlertPlans = useRef(null);
+    const errorAlertMsg = useRef(null);
     //{parms.customerID}
 
     const initialState = {id: "", calories:"", protein: "", fat: "", carbs: ""};
@@ -17,12 +19,17 @@ const Customer = () => {
     const [customer,setCustomer] = useState();
     const [weightChart, setWeightChart] = useState();
     const [currentWeight,setCurrentWeight] = useState();
+    const [mealPlan,setMealplan] = useState({userID:parms.customerID,fileName:""});
+    const [workoutPlan,setWorkoutPlan] = useState({userID:parms.customerID,fileName:""});
+    const [error,setError] = useState();
+
 
     useEffect( ()  => {
         userFacade.getCustomerByCustomerID(parms.customerID).then(customer => setCustomer(customer));
         userFacade.getNutritionByCustomerID(parms.customerID).then(nutrition => setNutrition(nutrition))
         userFacade.getWeightChartByCustomerID(parms.customerID).then(weightChart => setWeightChart(weightChart.url))
         userFacade.getLatestWeightByCustomerID(parms.customerID).then(currentWeight => setCurrentWeight(currentWeight.weight))
+
     }, [])
 
 
@@ -38,6 +45,55 @@ const Customer = () => {
         userFacade.updateNutrition(nutrition);
         successAlertMsg.current.style.display = 'block';
         setTimeout(function() {successAlertMsg.current.style.display = 'none'},3000)
+    }
+
+    const handleInputMealPlan = (event) => {
+        const target = event.target
+        const id = target.id
+        const value = target.value;
+        setMealplan({...mealPlan,[id]:value});
+        console.log(mealPlan)
+    }
+
+    const handleSubmitMealPlan = (e) => {
+        e.preventDefault();
+        userFacade.setMealPlan(mealPlan).then(err =>{
+
+            if(err.message){
+                setError(err.message)
+                errorAlertMsg.current.style.display = 'block';
+                setTimeout(function() {errorAlertMsg.current.style.display = 'none'},3000)
+            } else{
+                successAlertPlans.current.style.display = 'block';
+                setTimeout(function() {successAlertPlans.current.style.display = 'none'},3000)
+            }
+
+        });
+    }
+
+    const handleInputWorkoutPlan = (event) => {
+        const target = event.target
+        const id = target.id
+        const value = target.value;
+        setWorkoutPlan({...workoutPlan,[id]:value});
+        console.log(workoutPlan)
+    }
+
+    const handleSubmitWorkoutPlan = (e) => {
+        e.preventDefault();
+        userFacade.setWorkoutPlan(mealPlan).then(err =>{
+
+         if(err.message){
+             setError(err.message)
+             console.log(error)
+             errorAlertMsg.current.style.display = 'block';
+             setTimeout(function() {errorAlertMsg.current.style.display = 'none'},3000)
+        } else{
+             successAlertPlans.current.style.display = 'block';
+             setTimeout(function() {successAlertPlans.current.style.display = 'none'},3000)
+         }
+
+        })
     }
 
     return (
@@ -78,7 +134,7 @@ const Customer = () => {
                             customer &&
                             <Form onChange={handleInput} onSubmit={handleSubmit}>
                                 <div ref={successAlertMsg} className="alert alert-success" style={{display:"none"}}>
-                                    <strong>Information opdateret</strong>
+                                    <strong>Opdateret</strong>
                                 </div>
                                 <Form.Group className="mb-3" controlId="calories">
                                     <Form.Label>Kalorier</Form.Label>
@@ -118,6 +174,35 @@ const Customer = () => {
                         </div>
                         }
                     </div>
+
+                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                        <div ref={errorAlertMsg} className="alert alert-danger" style={{display:"none"}}>
+                            <strong>{error}</strong>
+                        </div>
+                        <div ref={successAlertPlans} className="alert alert-success" style={{display:"none"}}>
+                            <strong>Plan tilføjet</strong>
+                        </div>
+                        <h3 className="text-center">Plans</h3>
+                        <Form onChange={handleInputMealPlan} onSubmit={handleSubmitMealPlan} className="mb-5">
+                            <Form.Group className="mb-3" controlId="fileName">
+                                <Form.Label>Meal Plan</Form.Label>
+                                <Form.Control required type="text" value={mealPlan.fileName}
+                                              placeholder="Meal plan"/>
+                            </Form.Group>
+                            <Button type="submit" className="btn-primary ">Tilføj</Button>
+                        </Form>
+
+                        <Form onChange={handleInputWorkoutPlan} onSubmit={handleSubmitWorkoutPlan}>
+                            <Form.Group className="mb-3" controlId="fileName">
+                                <Form.Label>Workout plan</Form.Label>
+                                <Form.Control required type="text" value={workoutPlan.fileName}
+                                              placeholder="Workout plan"/>
+                            </Form.Group>
+                            <Button type="submit" className="btn-primary ">Tilføj</Button>
+                        </Form>
+                    </div>
+
+
                 </Col>
 
             </Row>
