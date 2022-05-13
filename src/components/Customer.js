@@ -168,7 +168,7 @@ const Customer = () => {
                         {currentWeight &&
                         <div>
                             <div>
-                                <h3 className={"text-center"}>Current weight: {currentWeight} kg</h3>
+                                <h3 className={"text-center"}>Nuværende vægt: {currentWeight} kg</h3>
                             </div>
                         <img src={weightChart} alt="weightgraph" style={{width:"100%"}}/>
                         </div>
@@ -182,23 +182,23 @@ const Customer = () => {
                         <div ref={successAlertPlans} className="alert alert-success" style={{display:"none"}}>
                             <strong>Plan tilføjet</strong>
                         </div>
-                        <h3 className="text-center">Plans</h3>
+                        <h3 className="text-center">Planer</h3>
                         <Form onChange={handleInputMealPlan} onSubmit={handleSubmitMealPlan} className="mb-5">
                             <Form.Group className="mb-3" controlId="fileName">
-                                <Form.Label>Meal Plan</Form.Label>
+                                <Form.Label>Madplan</Form.Label>
                                 <Form.Control required type="text" value={mealPlan.fileName}
-                                              placeholder="Meal plan"/>
+                                              placeholder="Indsæt link"/>
                             </Form.Group>
-                            <Button type="submit" className="btn-primary ">Tilføj</Button>
+                            <Button type="submit" className="btn-primary ">Opdater</Button>
                         </Form>
 
                         <Form onChange={handleInputWorkoutPlan} onSubmit={handleSubmitWorkoutPlan}>
                             <Form.Group className="mb-3" controlId="fileName">
-                                <Form.Label>Workout plan</Form.Label>
+                                <Form.Label>Træningsplan</Form.Label>
                                 <Form.Control required type="text" value={workoutPlan.fileName}
-                                              placeholder="Workout plan"/>
+                                              placeholder="Indsæt link"/>
                             </Form.Group>
-                            <Button type="submit" className="btn-primary ">Tilføj</Button>
+                            <Button type="submit" className="btn-primary ">Opdater</Button>
                         </Form>
                     </div>
 

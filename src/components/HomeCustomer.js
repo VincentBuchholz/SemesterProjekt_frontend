@@ -47,40 +47,33 @@ const Home = () => {
             <Container>
                 <Row className={"mt-5"}>
                     <Col>
-                        <h2>Nutrition</h2>
-                        <h4>Goal calories: {nutrition.calories} </h4>
+                        <h2>Ernæring</h2>
+                        <h4>Kalorie mål: {nutrition.calories} </h4>
                         <br />
 
                         <h4>Macros: </h4>
-                        <h5>Protein: {nutrition.protein}</h5>
-                        <h5>Fat: {nutrition.fat}</h5>
-                        <h5>Carbs: {nutrition.carbs}</h5>
+                        <h5>Proteiner: {nutrition.protein}</h5>
+                        <h5>Fedt: {nutrition.fat}</h5>
+                        <h5>kulhydrater: {nutrition.carbs}</h5>
                         <img src={macroChart.url} alt="macrochart" style={{width:"80%"}}/>
                     </Col>
                     <Col>
                             <div className={"mb-5"}>
-                                <h2>Weight</h2>
                                 {currentWeight &&
+                                    <div className={"mb-5"}>
+                                        <h3>Nuværende vægt: {currentWeight} kg</h3>
                                 <img src={weightChart.url} alt="weightgraph" style={{width: "100%"}}/>
+                                    </div>
                                 }
                             </div>
-
-
-
                         <div>
-                            {currentWeight &&
-                            <div className={"mb-5"}>
-                                <h5>Current weight: {currentWeight} kg</h5>
-                            </div>
-                            }
-                        <h4>Weigh in</h4>
-                        <Form onChange={handleInput} onSubmit={handleSubmit}>
+                            <Form onChange={handleInput} onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="phone">
-                                <Form.Label>Weight</Form.Label>
-                                <Form.Control type="number" required  value={weight}  placeholder="Weight" />
+                                <Form.Label className={"h4"}>Indvejning</Form.Label>
+                                <Form.Control type="number" required  value={weight}  placeholder="Vægt i kg" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
-                                Update weight
+                                Indsæt vægt
                             </Button>
                         </Form>
                         </div>

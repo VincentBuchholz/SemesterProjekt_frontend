@@ -39,17 +39,17 @@ const FrontPage = () => {
         <Container>
             <div className={"mb-5"}>
             <h1>Fit Helper</h1>
-            <h8>Udfyld kontaktformularen og få et uforpligtende tilbud!</h8>
+            <p>Udfyld kontaktformularen og få et uforpligtende tilbud!</p>
             </div>
 
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="firstName">
                     <Form.Label>Fornavn</Form.Label>
-                    <Form.Control type="text" required value={request.firstName}  placeholder="skriv dit fornavn" />
+                    <Form.Control type="text" required value={request.firstName}  placeholder="Skriv dit fornavn" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="lastName">
                     <Form.Label>Efternavn</Form.Label>
-                    <Form.Control type="text" required  value={request.lastName}  placeholder="skriv dit efternavn" />
+                    <Form.Control type="text" required  value={request.lastName}  placeholder="Skriv dit efternavn" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email address</Form.Label>
@@ -57,7 +57,7 @@ const FrontPage = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="phone">
                     <Form.Label>Nummer</Form.Label>
-                    <Form.Control type="text" required  value={request.phone}  placeholder="skriv dit nummer" />
+                    <Form.Control type="text" required  value={request.phone}  placeholder="Skriv dit nummer" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="desc">

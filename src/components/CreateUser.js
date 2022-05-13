@@ -51,6 +51,7 @@ const CreateUser = () => {
 
     return (
         <Container>
+            <h2 className={"text-center"}>Opret bruger</h2>
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <div ref={errorAlertMsg} className="alert alert-danger" style={{display:"none"}}>
                     <strong>Username is taken!</strong>
@@ -75,7 +76,7 @@ const CreateUser = () => {
                     <Form.Control required type="text" value={user.phone}  placeholder="Tlf Nummer" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="userName">
-                    <Form.Label>Bruger navn</Form.Label>
+                    <Form.Label>Brugernavn</Form.Label>
                     <Form.Control required type="text" value={user.userName}  placeholder="Brugernavn" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="password">

@@ -57,7 +57,7 @@ const Requests = () => {
                 {
                     requestSelected &&
                     <div className="mt-5">
-                        <h3>Foresprøgsels nr: {requestSelected.id}</h3>
+                        <h3>Forespørgsels nr: {requestSelected.id}</h3>
                         <Form className="disabled">
                             <Form.Group className="mb-3" controlId="firstName">
                                 <Form.Label>Fornavn</Form.Label>

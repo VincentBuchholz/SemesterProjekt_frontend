@@ -65,12 +65,12 @@ function App() {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto m-auto">
                                 <LinkContainer to="/">
-                                    <Nav.Link>Home</Nav.Link>
+                                    <Nav.Link>Hjem</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to="/about">
-                                    <Nav.Link>About</Nav.Link>
+                                    <Nav.Link>Om os</Nav.Link>
                                 </LinkContainer>
-                                <Button className="float-end" onClick={()=>setShowLogin(true)} >Log in</Button>
+                                <Button className="float-end" onClick={()=>setShowLogin(true)} >Log ind</Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

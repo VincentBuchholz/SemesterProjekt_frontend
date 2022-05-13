@@ -9,7 +9,7 @@ import Customer from "./components/Customer";
 import HomeCustomer from "./components/HomeCustomer";
 import apiFacade from "./apiFacade";
 import MealPlan from "./components/MealPlan";
-
+import "./style.css";
 
 const rootElement = document.getElementById("root");
 const loggedIn = apiFacade.loggedIn()

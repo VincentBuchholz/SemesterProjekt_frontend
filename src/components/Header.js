@@ -20,7 +20,7 @@ const Header = ({logout}) => {
                             {
                                 isCoach &&
                                 <LinkContainer to="/">
-                                    <Nav.Link>Home</Nav.Link>
+                                    <Nav.Link>Hjem</Nav.Link>
                                 </LinkContainer>
                             }
                             {
@@ -49,7 +49,7 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/">
-                                    <Nav.Link>Overview</Nav.Link>
+                                    <Nav.Link>Oversigt</Nav.Link>
                                 </LinkContainer>
 
                             }
@@ -57,7 +57,7 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/workoutplan">
-                                    <Nav.Link>Workout plan</Nav.Link>
+                                    <Nav.Link>Træningsplan</Nav.Link>
                                 </LinkContainer>
 
                             }
@@ -65,11 +65,11 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/mealplan">
-                                    <Nav.Link>Meal plan</Nav.Link>
+                                    <Nav.Link>Madplan</Nav.Link>
                                 </LinkContainer>
 
                             }
-                            <Button className="float-end" onClick={logout}>Log out</Button>
+                            <Button className="float-end" onClick={logout}>Log ud</Button>
                         </Nav>
                     </Navbar.Collapse>
             </Navbar>
