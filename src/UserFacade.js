@@ -61,6 +61,11 @@ function UserFacade() {
         return  fetch(URL + "/api/user/mealplan/"+customerID, options).then(r => r.json());
     }
 
+    const getWorkoutPlan = (customerID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/user/workoutplan/"+customerID, options).then(r => r.json());
+    }
+
 
 
 
@@ -95,6 +100,7 @@ function UserFacade() {
         setMealPlan,
         setWorkoutPlan,
         getMealPlan,
+        getWorkoutPlan,
     }
 }
 

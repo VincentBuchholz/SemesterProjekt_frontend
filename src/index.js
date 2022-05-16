@@ -10,6 +10,7 @@ import HomeCustomer from "./components/HomeCustomer";
 import apiFacade from "./apiFacade";
 import MealPlan from "./components/MealPlan";
 import "./style.css";
+import WorkoutPlan from "./components/WorkoutPlan";
 
 const rootElement = document.getElementById("root");
 const loggedIn = apiFacade.loggedIn()
@@ -24,6 +25,7 @@ render(
                 <Route path="/createUser" element={<CreateUser/>}/>
                 <Route path="/customers" element={<Customers/>}/>
                 <Route path="/mealplan" element={<MealPlan/>}/>
+                <Route path="/workoutplan" element={<WorkoutPlan/>}/>
                 <Route path="customers/:customerID" element={<Customer />}/>
 
             </Route>

@@ -3,13 +3,12 @@ import userFacade from "../UserFacade";
 
 import ExamplePDFViewer from "./PDFViewer";
 
-const MealPlan = () => {
+const WorkoutPlan = () => {
     const customerID = localStorage.getItem("userID");
     const[fileName, setFileName] = useState("");
 
     useEffect(()=>{
-        userFacade.getMealPlan(customerID).then(mealPlan => setFileName(mealPlan.fileName))
-
+        userFacade.getWorkoutPlan(customerID).then(workoutPlan => setFileName(workoutPlan.fileName))
     },[])
 
     return (
@@ -21,4 +20,4 @@ const MealPlan = () => {
     );
 };
 
-export default MealPlan;
+export default WorkoutPlan;
