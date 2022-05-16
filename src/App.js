@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
 import {LinkContainer} from "react-router-bootstrap";
 import FrontPage from "./components/FrontPage";
+import {useNavigate} from 'react-router-dom';
 
 function LogIn({login}) {
     const init = {username: "", password: ""};
@@ -44,12 +45,16 @@ function LogIn({login}) {
 
 
 function App() {
+    const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(false)
     const [showLogin,setShowLogin] = useState(false)
 
     const logout = () => {
         facade.logout()
         setLoggedIn(false)
+        navigate('/')
+        setShowLogin(false);
+
     }
     const login = (user, pass) => {
         facade.login(user, pass)

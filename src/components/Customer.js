@@ -81,7 +81,7 @@ const Customer = () => {
 
     const handleSubmitWorkoutPlan = (e) => {
         e.preventDefault();
-        userFacade.setWorkoutPlan(mealPlan).then(err =>{
+        userFacade.setWorkoutPlan(workoutPlan).then(err =>{
 
          if(err.message){
              setError(err.message)

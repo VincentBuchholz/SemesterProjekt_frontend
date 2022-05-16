@@ -1,3 +1,6 @@
+import {Link} from "react-router-dom";
+
+
 const URL = "http://localhost:8080/ca2_war_exploded";
 
 function handleHttpErrors(res) {
@@ -7,6 +10,7 @@ function handleHttpErrors(res) {
     }
     return res.json();
 }
+
 
 function apiFacade() {
     /* Insert utility-methods from a later step (d) here (REMEMBER to uncomment in the returned object when you do)*/
@@ -70,13 +74,12 @@ function apiFacade() {
         const loggedIn = getToken() != null;
         return loggedIn;
     }
+
     const logout = () => {
         localStorage.removeItem("jwtToken");
         localStorage.removeItem("userType");
         localStorage.removeItem("userID");
-        console.log(localStorage.getItem('jwtToken'))
-        console.log(localStorage.getItem('userType'))
-        console.log(localStorage.getItem('userID'))
+
     }
 
     return {
