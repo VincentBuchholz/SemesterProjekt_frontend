@@ -11,6 +11,7 @@ import apiFacade from "./apiFacade";
 import MealPlan from "./components/MealPlan";
 import "./style.css";
 import WorkoutPlan from "./components/WorkoutPlan";
+import CaloriesBurntCalculator from "./components/CaloriesBurntCalculator";
 
 const rootElement = document.getElementById("root");
 const loggedIn = apiFacade.loggedIn()
@@ -26,6 +27,7 @@ render(
                 <Route path="/customers" element={<Customers/>}/>
                 <Route path="/mealplan" element={<MealPlan/>}/>
                 <Route path="/workoutplan" element={<WorkoutPlan/>}/>
+                <Route path="/calories-burnt-calculator" element={<CaloriesBurntCalculator/>}/>
                 <Route path="customers/:customerID" element={<Customer />}/>
 
             </Route>
