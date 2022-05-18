@@ -36,7 +36,7 @@ const Requests = () => {
                                         <td>{customer.lastName}</td>
                                         <td>
                                             <Link
-                                                style={{ display: "block", margin: "1rem 0" }}
+                                                style={{ display: "block", margin: "0" }}
                                                 to={`/customers/${customer.id}`}
                                                 key={customer.id}
                                             >

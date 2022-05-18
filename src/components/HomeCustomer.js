@@ -46,16 +46,17 @@ const Home = () => {
 
         return (
             <Container>
-                <Row className={"mt-5"}>
+                <Row className="shadow-lg p-5 mb-5 bg-white rounded mt-5">
+
                     <Col>
-                        <h2>Ernæring</h2>
-                        <h4>Kalorie mål: {nutrition.calories} </h4>
+                        <h3>Ernæring</h3>
+                        <h5>Kalorie mål: {nutrition.calories} </h5>
                         <br />
 
-                        <h4>Macros: </h4>
-                        <h5>Proteiner: {nutrition.protein}</h5>
-                        <h5>Fedt: {nutrition.fat}</h5>
-                        <h5>kulhydrater: {nutrition.carbs}</h5>
+                        <h5>Macros: </h5>
+                        <h6>Proteiner: {nutrition.protein}</h6>
+                        <h6>Fedt: {nutrition.fat}</h6>
+                        <h6>kulhydrater: {nutrition.carbs}</h6>
                         <img src={macroChart.url} alt="macrochart" style={{width:"80%"}}/>
                     </Col>
                     <Col>

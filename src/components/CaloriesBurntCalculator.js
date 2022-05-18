@@ -35,7 +35,7 @@ const CaloriesBurntCalculator = () => {
         userFacade.getBurnedCalories(customerID,activityInfo.activityID,activityInfo.activityMin).then(response => setCaloriesBurned(response))
     }
     return (
-        <Container>
+        <Container className="shadow-lg p-5 mb-5 bg-white rounded mt-5">
             <h3>Udregn dine forbrændte kalorier</h3>
 
             <Form onChange={handleIntensity}>

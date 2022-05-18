@@ -36,7 +36,7 @@ const FrontPage = () => {
 
 
     return (
-        <Container>
+        <Container className="shadow-lg p-5 mb-5 bg-white rounded mt-5">
             <div className={"mb-5"}>
             <h1>Fit Helper</h1>
             <p>Udfyld kontaktformularen og få et uforpligtende tilbud!</p>

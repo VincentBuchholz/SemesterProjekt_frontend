@@ -21,8 +21,8 @@ const Requests = () => {
     const handleRemove = (e) => {
         const requestID = e.target.value;
         requestFacade.deleteRequest(requestID)
-        const newRequests = requests.filter((request) => request.id != requestID);
-        setRequests(newRequests)
+        if(requests) {const newRequests = requests.filter((request) => request.id != requestID);
+        setRequests(newRequests)}
     };
 
 
@@ -46,7 +46,7 @@ const Requests = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {
+                    {requests &&
                         requests.map((request) =>
                                     <tr key={request.id}>
                                         <td>{request.id}</td>

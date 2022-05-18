@@ -13,7 +13,7 @@ const Header = ({logout}) => {
 
     return (
         <div>
-            <Navbar bg="light" expand="lg" className={"m-auto w-50"}>
+            <Navbar expand="lg" style={{backgroundColor:"white !important" }} className={"m-auto w-50"}>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto m-auto">

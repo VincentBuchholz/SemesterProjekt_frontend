@@ -1,5 +1,5 @@
-import { render } from "react-dom";
-import { BrowserRouter, Routes,Route } from "react-router-dom";
+import {render} from "react-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import App from "./App";
 import Requests from "./components/Requests";
 import Home from "./components/Home";
@@ -17,7 +17,6 @@ const rootElement = document.getElementById("root");
 const loggedIn = apiFacade.loggedIn()
 
 render(
-
     <BrowserRouter>
         <Routes>
             <Route exact="true" path="/" element={<App/>}>
@@ -28,13 +27,13 @@ render(
                 <Route path="/mealplan" element={<MealPlan/>}/>
                 <Route path="/workoutplan" element={<WorkoutPlan/>}/>
                 <Route path="/calories-burnt-calculator" element={<CaloriesBurntCalculator/>}/>
-                <Route path="customers/:customerID" element={<Customer />}/>
+                <Route path="customers/:customerID" element={<Customer/>}/>
 
             </Route>
             <Route
                 path="*"
                 element={
-                    <main style={{ padding: "1rem" }}>
+                    <main style={{padding: "1rem"}}>
                         <p>There's nothing here!</p>
                     </main>
                 }

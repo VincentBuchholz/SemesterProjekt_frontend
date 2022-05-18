@@ -19,8 +19,9 @@ function LogIn({login}) {
     }
 
     return (
-        <Container>
-            <Form onChange={onChange} className={"mt-5 w-25 m-auto"}>
+        <Container style={{height: "calc(75vh - 60px)"}}>
+            <div className={"d-flex align-items-center justify-content-center h-100 "}>
+            <Form onChange={onChange} style={{width:"30%"}} className={"mt-5 shadow-lg p-5 mb-5 bg-white rounded"} >
                 <h2>Login</h2>
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label>Email address</Form.Label>
@@ -35,6 +36,7 @@ function LogIn({login}) {
                     Login
                 </Button>
             </Form>
+            </div>
         </Container>
 
 
@@ -65,7 +67,7 @@ function App() {
         <div>
             {!showLogin &&
                 <div>
-                    <Navbar bg="light" expand="lg" className={"m-auto w-50"}>
+                    <Navbar expand="lg" style={{backgroundColor:"white !important" }} className={"m-auto w-50"}>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto m-auto">
