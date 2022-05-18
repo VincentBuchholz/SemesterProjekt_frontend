@@ -99,7 +99,7 @@ const Customer = () => {
         <Container>
             <Row>
                 <Col>
-                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         <h3 className="text-center">Personlig information</h3>
                         {customer &&
                             <Form className="disabled">
@@ -127,7 +127,7 @@ const Customer = () => {
                     </div>
 
 
-                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         <h3 className="text-center">Ernærings information</h3>
                         {
                             customer &&
@@ -163,7 +163,7 @@ const Customer = () => {
                 </Col>
 
                 <Col>
-                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         {currentWeight &&
                         <div>
                             <div>
@@ -174,7 +174,7 @@ const Customer = () => {
                         }
                     </div>
 
-                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         <div ref={errorAlertMsg} className="alert alert-danger" style={{display:"none"}}>
                             <strong>{error}</strong>
                         </div>

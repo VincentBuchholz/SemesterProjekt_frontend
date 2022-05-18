@@ -50,8 +50,8 @@ const CreateUser = () => {
 
 
     return (
-        <Container>
-            <h2 className={"text-center"}>Opret bruger</h2>
+        <Container className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+            <h2 className={"text-center" }>Opret bruger</h2>
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <div ref={errorAlertMsg} className="alert alert-danger" style={{display:"none"}}>
                     <strong>Username is taken!</strong>

@@ -31,12 +31,12 @@ const Requests = () => {
         <Container>
             <Row>
 
-            <Col>
+            <Col >
 
             {
                 requests &&
 
-                <Table bordered hover className="mt-5">
+                <Table bordered hover className="shadow p-3 mb-5 bg-white rounded mt-5">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -67,7 +67,7 @@ const Requests = () => {
             <Col>
                 {
                     requestSelected &&
-                    <div className="mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         <h3>Forespørgsels nr: {requestSelected.id}</h3>
                         <Form className="disabled">
                             <Form.Group className="mb-3" controlId="firstName">
