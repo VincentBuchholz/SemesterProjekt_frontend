@@ -40,7 +40,7 @@ const FrontPage = () => {
             <div className={"mb-5"}>
                 <Row>
                     <Col>
-                        <h1>Fit Helper</h1>
+                        <h1>FIT HELPER</h1>
                         <p>Fill out the contact form and get a non-committal offer!</p>
 
                     </Col>
