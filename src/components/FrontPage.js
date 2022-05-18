@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Container, Form} from "react-bootstrap";
+import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import RequestFacade from "../RequestFacade";
-import {alignPropType} from "react-bootstrap/types";
+import logo from "images/logo_v2.png"
 
 const FrontPage = () => {
     const initialState = {coachID: "", firstName: "", lastName: "", email: "", desc: "", phone: ""};
@@ -38,8 +38,16 @@ const FrontPage = () => {
     return (
         <Container className="shadow-lg p-5 mb-5 bg-white rounded mt-5">
             <div className={"mb-5"}>
-            <h1>Fit Helper</h1>
-            <p>Udfyld kontaktformularen og få et uforpligtende tilbud!</p>
+                <Row>
+                    <Col>
+                        <h1>Fit Helper</h1>
+                        <p>Udfyld kontaktformularen og få et uforpligtende tilbud!</p>
+
+                    </Col>
+                    <Col>
+                        <img src={logo} alt={"logo"} className={"float-end"} width={"100px"}/>
+                    </Col>
+                </Row>
             </div>
 
             <Form onChange={handleInput} onSubmit={handleSubmit}>

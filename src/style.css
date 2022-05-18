@@ -32,3 +32,33 @@ h8 {
     font-size: 0.5rem;
     font-weight: bold;
 }
+
+.btn-primary{
+    background-color: #005F6A;
+    border: none;
+}
+.btn-danger{
+    background-color: darkred;
+}
+
+.btn-danger:hover{
+    background-color: red !important;
+}
+
+.btn-primary:hover{
+    background-color: #65AFB5;
+    border: none;
+}
+
+.btn-primary:active{
+    background-color: #65AFB5;
+    border: none;
+}
+
+.btn-primary:focus{
+    background-color: #65AFB5;
+    border: none;
+}
+
+
+

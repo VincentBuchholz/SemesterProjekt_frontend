@@ -21,18 +21,18 @@ function LogIn({login}) {
     return (
         <Container style={{height: "calc(75vh - 60px)"}}>
             <div className={"d-flex align-items-center justify-content-center h-100 "}>
-            <Form onChange={onChange} style={{width:"30%"}} className={"mt-5 shadow-lg p-5 mb-5 bg-white rounded"} >
+            <Form onChange={onChange} onSubmit={performLogin} style={{width:"30%"}} className={"mt-5 shadow-lg p-5 mb-5 bg-white rounded"} >
                 <h2>Login</h2>
                 <Form.Group className="mb-3" controlId="username">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="text" placeholder="Username"/>
+                    <Form.Label >Email address</Form.Label>
+                    <Form.Control required type="text" placeholder="Username"/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password"/>
+                    <Form.Control required type="password" placeholder="Password"/>
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={performLogin}>
+                <Button variant="primary" type="submit" >
                     Login
                 </Button>
             </Form>
