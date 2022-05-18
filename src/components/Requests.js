@@ -40,7 +40,7 @@ const Requests = () => {
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Fornavn</th>
+                        <th>Firstname</th>
                         <th>Email</th>
                         <th></th>
                     </tr>
@@ -53,8 +53,8 @@ const Requests = () => {
                                         <td>{request.firstName}</td>
                                         <td>{request.email}</td>
                                         <td>
-                                            <Button key={request.id} type="button" value={request.id} onClick={selectRequest} className="btn-primary me-5">Vis</Button>
-                                            <Button key={"delete"+request.id}  type="button" value={request.id} onClick={handleRemove} className="btn-danger">slet</Button>
+                                            <Button key={request.id} type="button" value={request.id} onClick={selectRequest} className="btn-primary me-5">Show</Button>
+                                            <Button key={"delete"+request.id}  type="button" value={request.id} onClick={handleRemove} className="btn-danger">Delete</Button>
                                         </td>
 
                                     </tr>
@@ -68,27 +68,27 @@ const Requests = () => {
                 {
                     requestSelected &&
                     <div className="shadow p-3 mb-5 bg-white rounded mt-5">
-                        <h3>Forespørgsels nr: {requestSelected.id}</h3>
+                        <h3>Request #{requestSelected.id}</h3>
                         <Form className="disabled">
                             <Form.Group className="mb-3" controlId="firstName">
-                                <Form.Label>Fornavn</Form.Label>
-                                <Form.Control type="text" value={requestSelected.firstName}  placeholder="skriv dit fornavn" />
+                                <Form.Label>Firstname</Form.Label>
+                                <Form.Control type="text" value={requestSelected.firstName}  />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="lastName">
-                                <Form.Label>Efternavn</Form.Label>
-                                <Form.Control type="text" value={requestSelected.lastName}  placeholder="skriv dit efternavn" />
+                                <Form.Label>Lastname</Form.Label>
+                                <Form.Control type="text" value={requestSelected.lastName} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="email">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" value={requestSelected.email}  placeholder="Skriv din email" />
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" value={requestSelected.email}  />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="phone">
-                                <Form.Label>Nummer</Form.Label>
-                                <Form.Control type="text" value={requestSelected.phone}  placeholder="skriv dit nummer" />
+                                <Form.Label>Phone</Form.Label>
+                                <Form.Control type="text" value={requestSelected.phone}   />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="desc">
-                                <Form.Label>Kommentar</Form.Label>
+                                <Form.Label>Comment</Form.Label>
                                 <Form.Control as="textarea"  value={requestSelected.desc}  placeholder="" />
                             </Form.Group>
                         </Form>

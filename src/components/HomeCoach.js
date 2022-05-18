@@ -19,22 +19,22 @@ const HomeCoach = () => {
     return (
         <div>
             {coach &&
-                <h1>Hej {coach.firstName}</h1>
+                <h1>Hey {coach.firstName}!</h1>
 
             }
             <Row>
                 <Col>
-                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         { customers &&
-                            <h3>Du har {customers.amount} klient/er </h3>
+                            <h3>You have {customers.amount} client/s </h3>
                         }
                     </div>
                 </Col>
                 <Col>
-                    <div className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
+                    <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         {
                             amountOfRequests &&
-                            <h3>Antal nye forespørgsler: {amountOfRequests.amount}</h3>
+                            <h3>Amount of new requests: {amountOfRequests.amount}</h3>
                         }
                     </div>
                 </Col>

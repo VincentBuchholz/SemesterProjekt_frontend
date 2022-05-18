@@ -22,8 +22,8 @@ const Requests = () => {
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Fornavn</th>
-                        <th>Efternavn</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -40,7 +40,7 @@ const Requests = () => {
                                                 to={`/customers/${customer.id}`}
                                                 key={customer.id}
                                             >
-                                                Se kunde
+                                                See customer
                                             </Link>
                                         </td>
 

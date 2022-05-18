@@ -100,26 +100,26 @@ const Customer = () => {
             <Row>
                 <Col>
                     <div className="shadow p-3 mb-5 bg-white rounded mt-5">
-                        <h3 className="text-center">Personlig information</h3>
+                        <h3 className="text-center">Personal information</h3>
                         {customer &&
                             <Form className="disabled">
                                 <Form.Group className="mb-3" controlId="firstName">
-                                    <Form.Label>Fornavn</Form.Label>
+                                    <Form.Label>Firstname</Form.Label>
                                     <Form.Control required type="text" value={customer.firstName}
-                                                  placeholder="Fornavn"/>
+                                                  />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="lastName">
-                                    <Form.Label>Efternavn</Form.Label>
+                                    <Form.Label>Lastname</Form.Label>
                                     <Form.Control required type="text" value={customer.lastName}
-                                                  placeholder="Efternavn"/>
+                                                 />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="email">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control required type="email" value={customer.email} placeholder="Email"/>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control required type="email" value={customer.email} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="phone">
-                                    <Form.Label>Nummer</Form.Label>
-                                    <Form.Control required type="text" value={customer.phone} placeholder="Tlf Nummer"/>
+                                    <Form.Label>Phone</Form.Label>
+                                    <Form.Control required type="text" value={customer.phone} />
                                 </Form.Group>
                             </Form>
 
@@ -128,15 +128,15 @@ const Customer = () => {
 
 
                     <div className="shadow p-3 mb-5 bg-white rounded mt-5">
-                        <h3 className="text-center">Ernærings information</h3>
+                        <h3 className="text-center">Nutrition information</h3>
                         {
                             customer &&
                             <Form onChange={handleInput} onSubmit={handleSubmit}>
                                 <div ref={successAlertMsg} className="alert alert-success" style={{display:"none"}}>
-                                    <strong>Opdateret</strong>
+                                    <strong>Updated</strong>
                                 </div>
                                 <Form.Group className="mb-3" controlId="calories">
-                                    <Form.Label>Kalorier</Form.Label>
+                                    <Form.Label>Calories</Form.Label>
                                     <Form.Control required type="number" value={nutrition.calories}
                                                   placeholder="calories"/>
                                 </Form.Group>
@@ -146,15 +146,15 @@ const Customer = () => {
                                                   placeholder="protein"/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="fat">
-                                    <Form.Label>Fedt</Form.Label>
-                                    <Form.Control required type="number" value={nutrition.fat} placeholder="fedt"/>
+                                    <Form.Label>Fat</Form.Label>
+                                    <Form.Control required type="number" value={nutrition.fat} placeholder="fat"/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="carbs">
-                                    <Form.Label>Kulhydrater</Form.Label>
+                                    <Form.Label>Carbs</Form.Label>
                                     <Form.Control required type="number" value={nutrition.carbs}
-                                                  placeholder="kulhydrater"/>
+                                                  placeholder="carbs"/>
                                 </Form.Group>
-                                <Button type="submit" className="btn-primary "> Opdater</Button>
+                                <Button type="submit" className="btn-primary "> Update</Button>
                             </Form>
                         }
                     </div>
@@ -167,7 +167,7 @@ const Customer = () => {
                         {currentWeight &&
                         <div>
                             <div>
-                                <h3 className={"text-center"}>Nuværende vægt: {currentWeight} kg</h3>
+                                <h3 className={"text-center"}>Current weight: {currentWeight} kg</h3>
                             </div>
                         <img src={weightChart} alt="weightgraph" style={{width:"100%"}}/>
                         </div>
@@ -179,25 +179,25 @@ const Customer = () => {
                             <strong>{error}</strong>
                         </div>
                         <div ref={successAlertPlans} className="alert alert-success" style={{display:"none"}}>
-                            <strong>Plan tilføjet</strong>
+                            <strong>Plan updated</strong>
                         </div>
-                        <h3 className="text-center">Planer</h3>
+                        <h3 className="text-center">Plans</h3>
                         <Form onChange={handleInputMealPlan} onSubmit={handleSubmitMealPlan} className="mb-5">
                             <Form.Group className="mb-3" controlId="fileName">
-                                <Form.Label>Madplan</Form.Label>
+                                <Form.Label>Mealplan</Form.Label>
                                 <Form.Control required type="text" value={mealPlan.fileName}
-                                              placeholder="Indsæt link"/>
+                                              placeholder="Insert link"/>
                             </Form.Group>
-                            <Button type="submit" className="btn-primary ">Opdater</Button>
+                            <Button type="submit" className="btn-primary ">Update</Button>
                         </Form>
 
                         <Form onChange={handleInputWorkoutPlan} onSubmit={handleSubmitWorkoutPlan}>
                             <Form.Group className="mb-3" controlId="fileName">
-                                <Form.Label>Træningsplan</Form.Label>
+                                <Form.Label>Workoutplan</Form.Label>
                                 <Form.Control required type="text" value={workoutPlan.fileName}
-                                              placeholder="Indsæt link"/>
+                                              placeholder="Insert link"/>
                             </Form.Group>
-                            <Button type="submit" className="btn-primary ">Opdater</Button>
+                            <Button type="submit" className="btn-primary ">Update</Button>
                         </Form>
                     </div>
 

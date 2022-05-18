@@ -51,7 +51,7 @@ const CreateUser = () => {
 
     return (
         <Container className="shadow-lg p-3 mb-5 bg-white rounded mt-5">
-            <h2 className={"text-center" }>Opret bruger</h2>
+            <h2 className={"text-center" }>Create client</h2>
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <div ref={errorAlertMsg} className="alert alert-danger" style={{display:"none"}}>
                     <strong>Username is taken!</strong>
@@ -60,31 +60,31 @@ const CreateUser = () => {
                     <strong>User has been created</strong>
                 </div>
                 <Form.Group className="mb-3" controlId="firstName">
-                    <Form.Label>Fornavn</Form.Label>
-                    <Form.Control required type="text" value={user.firstName}  placeholder="Fornavn" />
+                    <Form.Label>Firstname</Form.Label>
+                    <Form.Control required type="text" value={user.firstName}  placeholder="Firstname" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="lastName">
-                    <Form.Label>Efternavn</Form.Label>
-                    <Form.Control required type="text" value={user.lastName}  placeholder="Efternavn" />
+                    <Form.Label>Lastname</Form.Label>
+                    <Form.Control required type="text" value={user.lastName}  placeholder="Lastname" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="email">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control required type="email" value={user.email}  placeholder="Email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="phone">
                     <Form.Label>Nummer</Form.Label>
-                    <Form.Control required type="text" value={user.phone}  placeholder="Tlf Nummer" />
+                    <Form.Control required type="text" value={user.phone}  placeholder="Phone number" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="userName">
-                    <Form.Label>Brugernavn</Form.Label>
-                    <Form.Control required type="text" value={user.userName}  placeholder="Brugernavn" />
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control required type="text" value={user.userName}  placeholder="Username" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="password">
-                    <Form.Label>Kodeord</Form.Label>
-                    <Form.Control required type="password" value={user.password}  placeholder="Kodeord" />
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control required type="password" value={user.password}  placeholder="Password" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Opret bruger
+                    Create client
                 </Button>
 
             </Form>

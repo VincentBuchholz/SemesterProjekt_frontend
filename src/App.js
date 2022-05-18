@@ -24,7 +24,7 @@ function LogIn({login}) {
             <Form onChange={onChange} onSubmit={performLogin} style={{width:"30%"}} className={"mt-5 shadow-lg p-5 mb-5 bg-white rounded"} >
                 <h2>Login</h2>
                 <Form.Group className="mb-3" controlId="username">
-                    <Form.Label >Email address</Form.Label>
+                    <Form.Label >Email</Form.Label>
                     <Form.Control required type="text" placeholder="Username"/>
                 </Form.Group>
 
@@ -72,12 +72,12 @@ function App() {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto m-auto">
                                 <LinkContainer to="/">
-                                    <Nav.Link>Hjem</Nav.Link>
+                                    <Nav.Link>Home</Nav.Link>
                                 </LinkContainer>
                                 <LinkContainer to="/about">
-                                    <Nav.Link>Om os</Nav.Link>
+                                    <Nav.Link>About us</Nav.Link>
                                 </LinkContainer>
-                                <Button className="float-end" onClick={()=>setShowLogin(true)} >Log ind</Button>
+                                <Button className="float-end" onClick={()=>setShowLogin(true)} >Login</Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

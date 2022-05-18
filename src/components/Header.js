@@ -20,27 +20,27 @@ const Header = ({logout}) => {
                             {
                                 isCoach &&
                                 <LinkContainer to="/">
-                                    <Nav.Link>Hjem</Nav.Link>
+                                    <Nav.Link>Home</Nav.Link>
                                 </LinkContainer>
                             }
                             {
                                 isCoach &&
 
                                 <LinkContainer to="/Requests">
-                                    <Nav.Link>Forespørgsler</Nav.Link>
+                                    <Nav.Link>Requests</Nav.Link>
                                 </LinkContainer>
 
                             }
                             {
                                 isCoach &&
                                 <LinkContainer to="/createUser">
-                                <Nav.Link>Opret bruger</Nav.Link>
+                                <Nav.Link>Create client</Nav.Link>
                                 </LinkContainer>
                             }
                             {
                                 isCoach &&
                                 <LinkContainer to="/customers">
-                                    <Nav.Link>Kunder</Nav.Link>
+                                    <Nav.Link>Clients</Nav.Link>
                                 </LinkContainer>
                             }
 
@@ -49,7 +49,7 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/">
-                                    <Nav.Link>Oversigt</Nav.Link>
+                                    <Nav.Link>Overview</Nav.Link>
                                 </LinkContainer>
 
                             }
@@ -57,7 +57,7 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/workoutplan">
-                                    <Nav.Link>Træningsplan</Nav.Link>
+                                    <Nav.Link>Workoutplan</Nav.Link>
                                 </LinkContainer>
 
                             }
@@ -65,7 +65,7 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/mealplan">
-                                    <Nav.Link>Madplan</Nav.Link>
+                                    <Nav.Link>Mealplan</Nav.Link>
                                 </LinkContainer>
 
                             }
@@ -73,11 +73,11 @@ const Header = ({logout}) => {
                                 !isCoach &&
 
                                 <LinkContainer to="/calories-burnt-calculator">
-                                    <Nav.Link>Kalorier forbrændt</Nav.Link>
+                                    <Nav.Link>Calories burned</Nav.Link>
                                 </LinkContainer>
 
                             }
-                            <Button className="float-end" onClick={logout}>Log ud</Button>
+                            <Button className="float-end" onClick={logout}>Log out</Button>
                         </Nav>
                     </Navbar.Collapse>
             </Navbar>

@@ -49,20 +49,20 @@ const Home = () => {
                 <Row className="shadow-lg p-5 mb-5 bg-white rounded mt-5">
 
                     <Col>
-                        <h3>Ernæring</h3>
-                        <p>Kalorie mål: {nutrition.calories} </p>
+                        <h3>Nutrition</h3>
+                        <p>Calorie goal: {nutrition.calories} </p>
                         <br/>
                         <h5>Macros: </h5>
-                        <p>Proteiner: {nutrition.protein}g</p>
-                        <p>Fedt: {nutrition.fat}g</p>
-                        <p>kulhydrater: {nutrition.carbs}g</p>
+                        <p>Proteins: {nutrition.protein}g</p>
+                        <p>Fat: {nutrition.fat}g</p>
+                        <p>Carbs: {nutrition.carbs}g</p>
                         <img src={macroChart.url} alt="macrochart" style={{width:"80%"}}/>
                     </Col>
                     <Col>
                             <div className={"mb-5"}>
                                 {currentWeight &&
                                     <div className={"mb-5"}>
-                                        <h3>Nuværende vægt: {currentWeight} kg</h3>
+                                        <h3>Current weight: {currentWeight} kg</h3>
                                 <img src={weightChart.url} alt="weightgraph" style={{width: "100%"}}/>
                                     </div>
                                 }
@@ -70,11 +70,11 @@ const Home = () => {
                         <div>
                             <Form onChange={handleInput} onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="phone">
-                                <Form.Label className={"h4"}>Indvejning</Form.Label>
-                                <Form.Control type="number" required  value={weight}  placeholder="Vægt i kg" />
+                                <Form.Label className={"h4"}>Weigh in</Form.Label>
+                                <Form.Control type="number" required  value={weight}  placeholder="Weight in kg" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
-                                Indsæt vægt
+                                Insert weight
                             </Button>
                         </Form>
                         </div>
