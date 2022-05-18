@@ -11,10 +11,19 @@ function UserFacade() {
         const options = makeOptions("GET",false,true); //True add's the token
         return  fetch(URL + "/api/user/customers/"+coachID, options).then(r => r.json());
     }
+    const getAmountOfCustomersByCoach = (coachID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/user/amountofcustomers/"+coachID, options).then(r => r.json());
+    }
 
     const getCustomerByCustomerID =  (customerID) => {
         const options = makeOptions("GET",false,true); //True add's the token
         return  fetch(URL + "/api/user/customer/"+customerID, options).then(r => r.json());
+    }
+
+    const getCoachByID =  (coachID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/user/coach/"+coachID, options).then(r => r.json());
     }
 
     const getNutritionByCustomerID =  (customerID) => {
@@ -121,6 +130,8 @@ function UserFacade() {
         getWorkoutPlan,
         getActivities,
         getBurnedCalories,
+        getCoachByID,
+        getAmountOfCustomersByCoach,
     }
 }
 

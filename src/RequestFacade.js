@@ -17,6 +17,10 @@ function RequestFacade() {
         const options = makeOptions("GET",false,true); //True add's the token
         return  fetch(URL + "/api/request/coach/"+coachID, options).then(r => r.json());
     }
+    const getAmountOfRequestsByCoachID = (coachID) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + "/api/request/amount/"+coachID, options).then(r => r.json());
+    }
 
     const getRequestByRequestID = (requestID) => {
         const options = makeOptions("GET",false,true); //True add's the token
@@ -51,6 +55,7 @@ function RequestFacade() {
         getRequestByCoachID,
         getRequestByRequestID,
         deleteRequest,
+        getAmountOfRequestsByCoachID,
     }
 }
 
