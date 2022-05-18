@@ -51,8 +51,7 @@ const Home = () => {
                     <Col>
                         <h3>Ernæring</h3>
                         <h5>Kalorie mål: {nutrition.calories} </h5>
-                        <br />
-
+                        <br/>
                         <h5>Macros: </h5>
                         <h6>Proteiner: {nutrition.protein}</h6>
                         <h6>Fedt: {nutrition.fat}</h6>
