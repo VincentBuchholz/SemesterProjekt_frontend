@@ -24,6 +24,7 @@ const Home = () => {
             userFacade.getMacroChartByCustomerID(apiFacade.getUserID()).then(macroChart => setMacroChart(macroChart))
             userFacade.getWeightChartByCustomerID(apiFacade.getUserID()).then(weightChart => setWeightChart(weightChart))
             userFacade.getLatestWeightByCustomerID(apiFacade.getUserID()).then(currentWeight => setCurrentWeight(currentWeight.weight))
+            userFacade.getActivities(2).then(response => console.log(response))
         }, [])
 
         useEffect(() => {

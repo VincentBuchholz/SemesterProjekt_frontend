@@ -69,6 +69,14 @@ const Header = ({logout}) => {
                                 </LinkContainer>
 
                             }
+                            {
+                                !isCoach &&
+
+                                <LinkContainer to="/calories-burnt-calculator">
+                                    <Nav.Link>Kalorier forbrændt</Nav.Link>
+                                </LinkContainer>
+
+                            }
                             <Button className="float-end" onClick={logout}>Log ud</Button>
                         </Nav>
                     </Navbar.Collapse>

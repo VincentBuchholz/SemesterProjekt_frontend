@@ -33,7 +33,6 @@ const Customer = () => {
     }, [])
 
 
-
     const handleInput = (event) => {
         const target = event.target
         const id = target.id

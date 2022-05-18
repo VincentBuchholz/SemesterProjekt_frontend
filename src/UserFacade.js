@@ -66,6 +66,24 @@ function UserFacade() {
         return  fetch(URL + "/api/user/workoutplan/"+customerID, options).then(r => r.json());
     }
 
+    const getActivities = (intensityLevel) =>{
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com',
+                'X-RapidAPI-Key': '57c4cf4a3cmsha1733afccea0a99p1ca0ddjsnb9150d45bfe5'
+            }
+        };
+        console.log("helllo")
+
+        return fetch('https://fitness-calculator.p.rapidapi.com/activities?intensitylevel='+intensityLevel, options).then(r => r.json())
+    }
+
+
+    const getBurnedCalories = (customerID,activityID,activityMin) => {
+        const options = makeOptions("GET",false,true); //True add's the token
+        return  fetch(URL + `/api/user/caloriesburned/${customerID}/${activityID}/${activityMin}`, options).then(r => r.json());
+    }
 
 
 
@@ -101,6 +119,8 @@ function UserFacade() {
         setWorkoutPlan,
         getMealPlan,
         getWorkoutPlan,
+        getActivities,
+        getBurnedCalories,
     }
 }
 
