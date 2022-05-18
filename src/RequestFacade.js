@@ -23,6 +23,11 @@ function RequestFacade() {
         return  fetch(URL + "/api/request/"+requestID, options).then(r => r.json());
     }
 
+    const deleteRequest = (requestID) => {
+        const options = makeOptions("DELETE",false,true); //True add's the token
+        fetch(URL + "/api/request/delete/"+requestID, options).then(r => r.json());
+    }
+
 
     const makeOptions = (method, body,addToken) => {
         var opts = {
@@ -45,6 +50,7 @@ function RequestFacade() {
         createRequest,
         getRequestByCoachID,
         getRequestByRequestID,
+        deleteRequest,
     }
 }
 

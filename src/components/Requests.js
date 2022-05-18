@@ -18,6 +18,14 @@ const Requests = () => {
         })
     }
 
+    const handleRemove = (e) => {
+        const requestID = e.target.value;
+        requestFacade.deleteRequest(requestID)
+        const newRequests = requests.filter((request) => request.id != requestID);
+        setRequests(newRequests)
+    };
+
+
     return (
 
         <Container>
@@ -44,7 +52,10 @@ const Requests = () => {
                                         <td>{request.id}</td>
                                         <td>{request.firstName}</td>
                                         <td>{request.email}</td>
-                                        <td><Button  type="button" value={request.id} onClick={selectRequest} className="btn-primary">Vis</Button></td>
+                                        <td>
+                                            <Button key={request.id} type="button" value={request.id} onClick={selectRequest} className="btn-primary me-5">Vis</Button>
+                                            <Button key={"delete"+request.id}  type="button" value={request.id} onClick={handleRemove} className="btn-danger">slet</Button>
+                                        </td>
 
                                     </tr>
                         )
