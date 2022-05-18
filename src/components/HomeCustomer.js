@@ -50,12 +50,12 @@ const Home = () => {
 
                     <Col>
                         <h3>Ernæring</h3>
-                        <h5>Kalorie mål: {nutrition.calories} </h5>
+                        <p>Kalorie mål: {nutrition.calories} </p>
                         <br/>
                         <h5>Macros: </h5>
-                        <h6>Proteiner: {nutrition.protein}</h6>
-                        <h6>Fedt: {nutrition.fat}</h6>
-                        <h6>kulhydrater: {nutrition.carbs}</h6>
+                        <p>Proteiner: {nutrition.protein}g</p>
+                        <p>Fedt: {nutrition.fat}g</p>
+                        <p>kulhydrater: {nutrition.carbs}g</p>
                         <img src={macroChart.url} alt="macrochart" style={{width:"80%"}}/>
                     </Col>
                     <Col>
