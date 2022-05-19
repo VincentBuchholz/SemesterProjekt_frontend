@@ -104,12 +104,12 @@ const Customer = () => {
                         {customer &&
                             <Form className="disabled">
                                 <Form.Group className="mb-3" controlId="firstName">
-                                    <Form.Label>Firstname</Form.Label>
+                                    <Form.Label>First name</Form.Label>
                                     <Form.Control required type="text" value={customer.firstName}
                                                   />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="lastName">
-                                    <Form.Label>Lastname</Form.Label>
+                                    <Form.Label>Last name</Form.Label>
                                     <Form.Control required type="text" value={customer.lastName}
                                                  />
                                 </Form.Group>

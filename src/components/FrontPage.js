@@ -52,25 +52,25 @@ const FrontPage = () => {
 
             <Form onChange={handleInput} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="firstName">
-                    <Form.Label>Firstname</Form.Label>
-                    <Form.Control type="text" required value={request.firstName}  placeholder="Type your firstname" />
+                    <Form.Label>First name</Form.Label>
+                    <Form.Control type="text" required value={request.firstName}  placeholder="Enter your first name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="lastName">
-                    <Form.Label>Lastname</Form.Label>
-                    <Form.Control type="text" required  value={request.lastName}  placeholder="Type your lastname" />
+                    <Form.Label>Last name</Form.Label>
+                    <Form.Control type="text" required  value={request.lastName}  placeholder="Enter your last name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" required  value={request.email}  placeholder="Type your email" />
+                    <Form.Control type="email" required  value={request.email}  placeholder="Enter your email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="phone">
                     <Form.Label>Phone</Form.Label>
-                    <Form.Control type="text" required  value={request.phone}  placeholder="Type your phone number" />
+                    <Form.Control type="text" required  value={request.phone}  placeholder="Enter your phone number" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="desc">
                     <Form.Label>Comment</Form.Label>
-                    <Form.Control as="textarea" required value={request.desc}  placeholder="You can make a comment" />
+                    <Form.Control as="textarea" required value={request.desc}  placeholder="Tell us about your goal" />
                 </Form.Group>
 
                 <Form.Group className="mb-3">

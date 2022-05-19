@@ -40,7 +40,7 @@ const Requests = () => {
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Firstname</th>
+                        <th>First name</th>
                         <th>Email</th>
                         <th></th>
                     </tr>
@@ -71,11 +71,11 @@ const Requests = () => {
                         <h3>Request #{requestSelected.id}</h3>
                         <Form className="disabled">
                             <Form.Group className="mb-3" controlId="firstName">
-                                <Form.Label>Firstname</Form.Label>
+                                <Form.Label>First name</Form.Label>
                                 <Form.Control type="text" value={requestSelected.firstName}  />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="lastName">
-                                <Form.Label>Lastname</Form.Label>
+                                <Form.Label>Last name</Form.Label>
                                 <Form.Control type="text" value={requestSelected.lastName} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="email">
