@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import {LinkContainer} from "react-router-bootstrap";
 import FrontPage from "./components/FrontPage";
 import {useNavigate} from 'react-router-dom';
+import logo from "./images/logo_v2.png"
 
 function LogIn({login}) {
     const init = {username: "", password: ""};
@@ -22,7 +23,11 @@ function LogIn({login}) {
         <Container style={{height: "calc(75vh - 60px)"}}>
             <div className={"d-flex align-items-center justify-content-center h-100 "}>
             <Form onChange={onChange} onSubmit={performLogin} style={{width:"30%"}} className={"mt-5 shadow-lg p-5 mb-5 bg-white rounded"} >
+                <div className="text-center">
+
+                <img src={logo} alt={"logo"} width={"130px"}/>
                 <h2>Login</h2>
+                </div>
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label >Email</Form.Label>
                     <Form.Control required type="text" placeholder="Username"/>
@@ -73,9 +78,6 @@ function App() {
                             <Nav className="me-auto m-auto">
                                 <LinkContainer to="/">
                                     <Nav.Link>Home</Nav.Link>
-                                </LinkContainer>
-                                <LinkContainer to="/about">
-                                    <Nav.Link>About us</Nav.Link>
                                 </LinkContainer>
                                 <Button className="float-end" onClick={()=>setShowLogin(true)} >Login</Button>
                             </Nav>
