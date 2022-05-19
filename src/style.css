@@ -11,8 +11,12 @@ input,select,textarea{
     font-family: 'Poppins', sans-serif;
     font-family: 'Orbitron', sans-serif;
 }
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-linkh1 {
+.navbar-light .navbar-nav .nav-link.active {
     color: #005F6A;
+}
+h1 {
+    font-size:2.5rem;
+    font-weight: bold;
 }
 h2 {
     font-size:2rem;
