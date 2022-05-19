@@ -26,7 +26,7 @@ const HomeCoach = () => {
                 <Col>
                     <div className="shadow p-3 mb-5 bg-white rounded mt-5">
                         { customers &&
-                            <h3>You have {customers.amount} client/s </h3>
+                            <h3>Amount of clients: {customers.amount} </h3>
                         }
                     </div>
                 </Col>
